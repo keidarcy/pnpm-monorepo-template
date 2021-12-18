@@ -1,0 +1,38 @@
+{
+  "name": "@joobs/joobs-data",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "run-p build:*",
+    "build:cjs": "tsc",
+    "build:esm": "tsc -p tsconfig.cjs.json",
+    "dev": "run-p dev:*",
+    "dev:cjs": "tsc -w",
+    "dev:esm": "tsc -w -p tsconfig.cjs.json",
+    "test": "NODE_ENV=unittest jest",
+    "clean": "rm -rf dist"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/cjs/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "keywords": [],
+  "author": "",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "automock": false,
+    "testMatch": [
+      "**/__tests__/**/*.ts?(x)",
+      "**/?(*.)+(spec|test).ts?(x)"
+    ],
+    "setupFiles": [
+      "../../setupJest.ts"
+    ]
+  }
+}
